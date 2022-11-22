@@ -23,8 +23,4 @@ RSpec.describe 'User', type: :model do
     subject.email = 'jeanbienvenusb'
     expect(subject).to_not be_valid
   end
-  it 'password should be present' do
-    subject.password = nil
-    expect(subject).to_not be_valid
-  end
 end
