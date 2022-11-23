@@ -4,13 +4,13 @@
     <%= category.name %>
   </p>
   <p>
-    <strong>Total Amount:</strong>
-    <%= category.total_amount %>
-  </p>
-  <p>
     <strong>Icon:</strong>
     <%= image_tag(category.icon, class: "portrait") %>
     <%#= category.icon %>
+  </p>
+  <p>
+    <strong>Total Amount:</strong>
+    <%= category.total_amount %>
   </p>
   <p>
     <%= link_to 'See Transactions', category_expenses_path(category) %>
