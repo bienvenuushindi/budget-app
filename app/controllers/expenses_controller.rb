@@ -1,5 +1,5 @@
 class ExpensesController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
   before_action :set_expense, only: %i[ show edit update destroy ]
 
   # GET /expenses or /expenses.json
@@ -22,7 +22,7 @@ class ExpensesController < ApplicationController
 
   # POST /expenses or /expenses.json
   def create
-    @expense = Expense.new(expense_params)
+    @expense = Expense.new(name: expense_params[:name], amount: expense_params[:amount], author: current_user)
 
     respond_to do |format|
       if @expense.save
@@ -38,7 +38,7 @@ class ExpensesController < ApplicationController
   # PATCH/PUT /expenses/1 or /expenses/1.json
   def update
     respond_to do |format|
-      if @expense.update(expense_params)
+      if @expense.update(name: expense_params[:name], amount: expense_params[:amount], author: current_user)
         format.html { redirect_to expense_url(@expense), notice: "Expense was successfully updated." }
         format.json { render :show, status: :ok, location: @expense }
       else
@@ -66,6 +66,7 @@ class ExpensesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def expense_params
-      params.fetch(:expense)
+      params.require(:category).permit(:name, :amount)
+      # params.require(:wiki).permit(collaborating_user_ids: [], ...)
     end
 end
