@@ -27,9 +27,11 @@ class CategoriesController < ApplicationController
   end
 
   # DELETE /categories/1 or /categories/1.json
+
   private
-    # Only allow a list of trusted parameters through.
-    def category_params
-      params.require(:category).permit(:name, :icon)
-    end
+
+  # Only allow a list of trusted parameters through.
+  def category_params
+    params.require(:category).permit(:name, :icon)
+  end
 end
