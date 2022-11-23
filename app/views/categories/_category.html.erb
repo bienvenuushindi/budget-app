@@ -6,17 +6,7 @@
 
   <p>
     <strong>Icon:</strong>
-    <%= category.icon %>
+    <%= image_tag(category.icon, class: "portrait") %>
+    <%#= category.icon %>
   </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= category.user_id %>
-  </p>
-
-  <p>
-    <strong>Expense:</strong>
-    <%= category.expense_id %>
-  </p>
-
 </div>
