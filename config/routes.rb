@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   root 'home#index', as: 'welcome'
   resources :users
-  resources :expenses, except: [:index]
+  resources :expenses, except: [:index, :new, :create]
   resources :categories do
-    resources :expenses, only: [:index]
+    resources :expenses, only: [:index, :new, :create]
   end
 end
