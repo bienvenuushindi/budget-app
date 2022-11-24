@@ -12,5 +12,5 @@
   <div class="w-25 h-25">
     <%= image_tag(category.icon, class: "w-100") %>
   </div>
-  <%= link_to '', category_expenses_path(category),  class: 'stretched-link' %>
+  <%= link_to '', category_expenses_path(category), id: "category-#{category.id}",  class: 'stretched-link' %>
 </div>

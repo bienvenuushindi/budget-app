@@ -1,0 +1,32 @@
+example_id                                          | status | run_time        |
+--------------------------------------------------- | ------ | --------------- |
+./spec/model/category_spec.rb[1:1]                  | passed | 0.01854 seconds |
+./spec/model/category_spec.rb[1:2]                  | passed | 0.00089 seconds |
+./spec/model/expense_spec.rb[1:1]                   | passed | 0.02967 seconds |
+./spec/model/expense_spec.rb[1:2]                   | passed | 0.00306 seconds |
+./spec/model/expense_spec.rb[1:3]                   | passed | 0.00327 seconds |
+./spec/model/expense_spec.rb[1:4]                   | passed | 0.00298 seconds |
+./spec/model/user_spec.rb[1:1]                      | passed | 0.00986 seconds |
+./spec/model/user_spec.rb[1:2]                      | passed | 0.00724 seconds |
+./spec/model/user_spec.rb[1:3]                      | passed | 0.00843 seconds |
+./spec/model/user_spec.rb[1:4]                      | passed | 0.00876 seconds |
+./spec/model/user_spec.rb[1:5]                      | passed | 0.01574 seconds |
+./spec/model/user_spec.rb[1:6]                      | passed | 0.01277 seconds |
+./spec/request_spec.rb[1:1:1]                       | passed | 0.00796 seconds |
+./spec/request_spec.rb[1:1:2]                       | passed | 0.02275 seconds |
+./spec/request_spec.rb[1:1:3]                       | passed | 0.0085 seconds  |
+./spec/views/category/index_html_erb_spec.rb[1:1:1] | passed | 0.21196 seconds |
+./spec/views/category/index_html_erb_spec.rb[1:1:2] | passed | 0.02618 seconds |
+./spec/views/category/index_html_erb_spec.rb[1:1:3] | passed | 0.0258 seconds  |
+./spec/views/category/index_html_erb_spec.rb[1:1:4] | passed | 0.05773 seconds |
+./spec/views/category/index_html_erb_spec.rb[1:1:5] | passed | 0.03635 seconds |
+./spec/views/category/index_html_erb_spec.rb[1:1:6] | passed | 0.04834 seconds |
+./spec/views/expense/index_html_erb_spec.rb[1:1:1]  | passed | 0.25759 seconds |
+./spec/views/expense/index_html_erb_spec.rb[1:1:2]  | passed | 0.03359 seconds |
+./spec/views/expense/index_html_erb_spec.rb[1:1:3]  | passed | 0.04768 seconds |
+./spec/views/expense/index_html_erb_spec.rb[1:1:4]  | passed | 0.05397 seconds |
+./spec/views/home/login_spec.rb[1:1]                | passed | 4.89 seconds    |
+./spec/views/home/login_spec.rb[1:2]                | passed | 2.32 seconds    |
+./spec/views/home/login_spec.rb[1:3]                | passed | 0.73406 seconds |
+./spec/views/home/signup_spec.rb[1:1]               | passed | 3.04 seconds    |
+./spec/views/home/signup_spec.rb[1:2]               | passed | 0.77287 seconds |

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'home#index', as: 'welcome'
   resources :users
   resources :expenses, except: %i[index new create]
-  resources :categories do
+  resources :categories, only: %i[index new create] do
     resources :expenses, only: %i[index new create]
   end
 end

@@ -15,7 +15,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should create user' do
+  test 'should create category' do
     assert_difference('User.count') do
       post users_url, params: { user: { name: @user.name } }
     end
@@ -23,7 +23,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to user_url(User.last)
   end
 
-  test 'should show user' do
+  test 'should show category' do
     get user_url(@user)
     assert_response :success
   end
@@ -33,12 +33,12 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should update user' do
+  test 'should update category' do
     patch user_url(@user), params: { user: { name: @user.name } }
     assert_redirected_to user_url(@user)
   end
 
-  test 'should destroy user' do
+  test 'should destroy category' do
     assert_difference('User.count', -1) do
       delete user_url(@user)
     end
