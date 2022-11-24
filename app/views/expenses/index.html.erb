@@ -1,15 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Expenses <span>Total Amount is $</span><%= @category.total_amount %></h1>
-
-<div id="expenses">
+<%= render 'partials/header', back_label: '< Back', back_link: categories_path, header: 'Transactions', next_value: "$#{@category.total_amount}" %>
+<div id="expenses" class="mb-5">
   <% @expenses.each do |expense| %>
     <%= render expense %>
-    <p>
-      <%#= link_to "Show this expense", expense %>
-    </p>
   <% end %>
 </div>
+<%= link_to "Add Transaction", new_category_expense_path(@category), class: 'fixed-bottom bg-white app-text text-decoration-none shadow btn text-center border-top'  %>
 
-<%= link_to "New expense", new_category_expense_path(@category) %>
-<%= link_to "< Back", categories_path %>
+
+

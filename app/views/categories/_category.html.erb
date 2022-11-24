@@ -1,18 +1,16 @@
-<div id="<%= dom_id category %>">
-  <p>
-    <strong>Name:</strong>
-    <%= category.name %>
-  </p>
-  <p>
-    <strong>Icon:</strong>
-    <%= image_tag(category.icon, class: "portrait") %>
-    <%#= category.icon %>
-  </p>
-  <p>
-    <strong>Total Amount:</strong>
-    <%= category.total_amount %>
-  </p>
-  <p>
-    <%= link_to 'See Transactions', category_expenses_path(category) %>
-  </p>
+<div id="<%= dom_id category %>" class="d-flex flex-row card border-1 mt-2 mx-1 py-2 px-1 shadow">
+  <div class="d-flex flex-column flex-grow-1 justify-content-between">
+    <div>
+      <strong>Name:</strong>
+      <%= category.name %>
+    </div>
+    <div>
+      <strong>Total Amount:</strong>
+      <%= category.total_amount %>
+    </div>
+  </div>
+  <div class="w-25 h-25">
+    <%= image_tag(category.icon, class: "w-100") %>
+  </div>
+  <%= link_to '', category_expenses_path(category),  class: 'stretched-link' %>
 </div>

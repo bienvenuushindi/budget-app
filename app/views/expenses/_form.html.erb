@@ -1,34 +1,32 @@
-<%= form_with(model: expense, url: category_expenses_path(@category)) do |form| %>
-  <% if expense.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+<div class=" text-center">
+  <%= form_with(model: expense, url: category_expenses_path(params[:category_id]), html: { id: 'new-transaction' }) do |form| %>
+    <% if expense.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
 
-      <ul>
-        <% expense.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% expense.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= form.label :name, class: 'form-label visually-hidden' %>
+      <%= form.text_field :name, class: 'w-100  form-control rounded-0', placeholder: 'Name' %>
+    </div>
+    <div class="form-group">
+      <%= form.label :amount, class: 'form-label visually-hidden' %>
+      <%= form.number_field :amount, class: 'w-100  form-control rounded-0', placeholder: 'Amount' %>
+    </div>
+    <div class="form-group text-start p-2">
+      <%= form.label :Categories, class: 'form-label h5' %> <br/>
+      <%= form.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
+        <div class="collection-check-box">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+      <% end %>
     </div>
   <% end %>
-  <div class="form-group">
-    <%= form.label :name, class: 'form-label' %>
-    <%= form.text_field :name, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.label :amount, class: 'form-label' %>
-    <%= form.number_field :amount, class: 'form-control' %>
-  </div>
-  <div>
-    <%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
-    <%#= form.collection_check_boxes :expense, :category_ids, Category.all, :id, :name_with_initial do |item| %>
-       <%#= item.check_box %>
-    <%# end %>
-  </div>
-<!--  <div class="form-group">-->
-    <%#= form.label :category_id, class: 'form-label' %>
-    <%#= form.select :category_id_id, Category.all.collect {|u| [u.name, u.id] },{ :multiple => true, :size => 20 }, class: 'form-select' %>
-<!--  </div>-->
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

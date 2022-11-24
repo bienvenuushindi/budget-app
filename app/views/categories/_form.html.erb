@@ -1,4 +1,5 @@
-<%= form_with(model: category, ) do |form| %>
+<div class=" text-center">
+<%= form_with(model: category, html: {id: 'new-category'} ) do |form| %>
   <% if category.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
@@ -12,16 +13,13 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class: 'visually-hidden' %>
+    <%= form.text_field :name, class: 'w-100  form-control rounded-0', placeholder: 'Name'  %>
   </div>
 
   <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.label :icon, class: 'visually-hidden' %>
+    <%= form.text_field :icon, class: 'w-100  form-control rounded-0', placeholder: 'Icon Url'  %>
   </div>
 <% end %>
+</div>
