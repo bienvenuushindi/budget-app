@@ -1,11 +1,10 @@
 class ExpensesController < ApplicationController
-  # load_and_authorize_resource
   before_action :set_expense, only: %i[show edit update destroy]
 
   # GET /expenses or /expenses.json
   def index
     @category = Category.find(params[:category_id])
-    @expenses = @category.expenses
+    @expenses = @category.expenses.order(created_at: :desc)
   end
 
   # GET /expenses/new
