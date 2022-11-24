@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe 'Category', type: :feature do
   describe 'index page' do
     before(:example) do
-      @user =  User.create(name: 'Ubs', email: 'jeanbienvenusb@gmail.com', password: 'my@password',
-                        password_confirmation: 'my@password')
+      @user = User.create(name: 'Ubs', email: 'jeanbienvenusb@gmail.com', password: 'my@password',
+                          password_confirmation: 'my@password')
       visit new_user_session_path
       sign_in @user
       @category = Category.create(name: 'Ushindi',
                                   icon: 'https://i.picsum.photos/id/8/5000/3333.jpg?hmac=OeG5ufhPYQBd6Rx1TAldAuF92lhCzAhKQKttGfawWuA',
-                              total_amount: 0, author: @user)
+                                  total_amount: 0, author: @user)
       visit categories_path
     end
 
@@ -39,6 +39,5 @@ RSpec.describe 'Category', type: :feature do
       click_on('Logout')
       expect(page).to have_current_path(welcome_path)
     end
-
   end
 end

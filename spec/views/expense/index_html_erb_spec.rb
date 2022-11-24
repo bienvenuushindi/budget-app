@@ -32,6 +32,5 @@ RSpec.describe 'Transaction', type: :feature do
       click_on('Back')
       expect(page).to have_current_path(categories_path)
     end
-
   end
 end
