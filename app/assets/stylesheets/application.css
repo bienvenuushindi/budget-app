@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+
+* {
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+body {
+    color: #434b54;
+}
+
+.app-text {
+    color: #434b54;
+}
+
+.color-primary {
+    color: #3778c2;
+}
+
+.bg-color-primary {
+    background-color: #3778c2;
+}
+
+.btn-color-primary {
+    background-color: #3778c2;
+    color: #fff
+}
+
+.btn-color-primary:hover {
+    background-color: #fff;
+    color: #3778c2;
+    border: 1px solid #3778c2;
+}
+
+.mt-6 {
+    margin-top: 5rem
+}
