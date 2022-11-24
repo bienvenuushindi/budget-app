@@ -1,0 +1,13 @@
+<div class="fixed-top d-flex bg-color-primary py-2 text-center text-white">
+  <% if local_variables.include?(:destroy) %>
+    <div><%= button_to back_label, back_link, class: 'btn text-white text-decoration-none', method: :delete %></div>
+  <% else %>
+    <div><%= link_to back_label, back_link, class: 'btn text-white text-decoration-none' %></div>
+  <% end %>
+  <h2 class="flex-grow-1 pt-1"><%= header %></h2>
+  <% if local_variables.include?(:next_value) %>
+    <div class="btn text-white"><%= next_value %></div>
+  <% elsif local_variables.include?(:action) %>
+    <button id="process-form" class="btn border-0 text-white"><%= action %></button>
+  <% end %>
+</div>
