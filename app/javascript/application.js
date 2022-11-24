@@ -2,11 +2,11 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-
 document.addEventListener('click', (e) => {
-    console.log(e.target.id)
-    if (e.target.id === 'process-form') {
-        const Form = document.getElementById('new_user') || document.getElementById('new-category') || document.getElementById('new-transaction')
-        Form.submit()
-    }
+  if (e.target.id === 'process-form') {
+    const Form = document.getElementById('new_user') ||
+            document.getElementById('new-category') ||
+            document.getElementById('new-transaction')
+    Form.submit()
+  }
 })
