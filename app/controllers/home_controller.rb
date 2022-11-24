@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
-  layout "splash"
+  layout 'splash'
   before_action :authenticate_user!, except: [:index]
-  def index
-  end
+  def index; end
 end

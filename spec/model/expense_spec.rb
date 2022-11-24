@@ -1,7 +1,6 @@
 require 'rails_helper'
 RSpec.describe 'Expense', type: :model do
-  # user=User.new(name: 'Ubs', email: 'jeanbienvenusb@gmail.com', password: 'my@password', password_confirmation: "my@password")
-  subject{Expense.new(user_id: 1, name: 'Electricity', amount: 10)}
+  subject { Expense.new(user_id: 1, name: 'Electricity', amount: 10) }
   before { subject.save }
 
   it 'name should be present' do

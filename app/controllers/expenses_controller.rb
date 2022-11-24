@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
   # load_and_authorize_resource
-  before_action :set_expense, only: %i[ show edit update destroy ]
+  before_action :set_expense, only: %i[show edit update destroy]
 
   # GET /expenses or /expenses.json
   def index
@@ -18,15 +18,16 @@ class ExpensesController < ApplicationController
   def create
     @expense = Expense.new(name: expense_params[:name],
                            amount: expense_params[:amount],
-                           author: current_user
-    )
+                           author: current_user)
     expense_params[:category_ids].each do |item|
-      @expense.categories << Category.find(item) if item != ""
+      @expense.categories << Category.find(item) if item != ''
     end
     # p @expense
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to category_expenses_url(params[:category_id]), notice: "Expense was successfully created." }
+        format.html do
+          redirect_to category_expenses_url(params[:category_id]), notice: 'Expense was successfully created.'
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
       end
