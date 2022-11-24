@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BudgetApp</title>
+  <title>Budget App</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -12,13 +12,16 @@
 </head>
 
 <body>
-<div class="container">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<div class="vh-100 mt-6">
+  <div class="container m-0 p-0">
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger text-success"><%= alert %></p>
+    <% end %>
+  </div>
+  <%= yield %>
 </div>
-<div>
-  <%#= button_to 'Logout', destroy_user_session_path, method: :delete %>
-</div>
-<%= yield %>
 </body>
 </html>
