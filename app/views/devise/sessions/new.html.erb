@@ -1,0 +1,17 @@
+<%= render 'partials/header', back_label: '<Back', back_link: welcome_path, header: 'Login', action: 'Login>' %>
+<div class=" text-center">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email, class: 'visually-hidden' %>
+      <%= f.email_field :email, autofocus: false, autocomplete: "email", placeholder: 'Email', class: 'w-100  form-control rounded-0' %>
+    </div>
+
+    <div class="field mb-2">
+      <%= f.label :password, class: 'visually-hidden' %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: 'w-100 form-control rounded-0' %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+</div>

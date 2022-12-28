@@ -1,0 +1,22 @@
+<%= render 'partials/header', back_label: '<Back', back_link: welcome_path, header: 'Sign up', action: 'Next>' %>
+<div class=" text-center">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+      <%= f.label :name, class: 'visually-hidden' %>
+      <%= f.text_field :name, autofocus: true, class: 'w-100 py-2 px-2 form-control rounded-0',placeholder: 'Name' %>
+    </div>
+    <div class="field">
+      <%= f.label :email, class: 'visually-hidden' %>
+      <%= f.email_field :email, autocomplete: "email", class: 'w-100  form-control rounded-0', placeholder: 'Email' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, class: 'visually-hidden' %>
+      <% if @minimum_password_length %>
+        <em class ="visually-hidden">(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "new-password", class: 'w-100 py-2 px-2  form-control rounded-0', placeholder: 'Password' %>
+    </div>
+  <% end %>
+</div>

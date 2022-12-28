@@ -1,0 +1,10 @@
+<%= render 'partials/header', back_label: '< Back', back_link: categories_path, header: 'Transactions', next_value: "$#{@category.total_amount}" %>
+<div id="expenses" class="mb-5">
+  <% @expenses.each do |expense| %>
+    <%= render expense %>
+  <% end %>
+</div>
+<%= link_to "Add Transaction", new_category_expense_path(@category), class: 'fixed-bottom bg-white app-text text-decoration-none shadow btn text-center border-top'  %>
+
+
+

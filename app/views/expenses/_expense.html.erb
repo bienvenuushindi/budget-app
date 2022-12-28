@@ -1,0 +1,7 @@
+<div id="<%= dom_id expense %>" class="card mt-2 mx-1 p-2 shadow-sm">
+  <div class="d-flex flex-row justify-content-between">
+    <h3><%= expense.name %></h3>
+    <div class="h5">$<%= expense.amount %></div>
+  </div>
+  <div><%= expense.created_at.strftime("%B %-d, %Y") %></div>
+</div>
