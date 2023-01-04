@@ -79,7 +79,7 @@ This project was built using.
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- [Live Demo Link](https://microverse-budget-app.herokuapp.com/)
+- [Live Demo Link](https://budgetapp.up.railway.app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
